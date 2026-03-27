@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 20% 96%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 231 99% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 15% 90%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 60 10% 92%;
+    --muted-foreground: 65 10% 38%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 60 10% 85%;
+    --input: 60 10% 85%;
+    --ring: 231 99% 62%;
+    --radius: 0.625rem;
+    
+    --cream: #F6F6F2;
+    --navy: #0B0F1C;
+    --indigo: #3D5AFE;
+    --warm-orange: #F97316;
+    --text-primary: #111111;
+    --text-secondary: #6B6F5A;
+    --soft-beige: #E8E4DC;
+    --light-sand: #F5F1EA;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300;
+    background-color: var(--indigo);
+    color: white;
+    box-shadow: 0 4px 14px rgba(61, 90, 254, 0.25);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(61, 90, 254, 0.35);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300;
+    background-color: white;
+    color: var(--text-primary);
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: rgba(17, 17, 17, 0.2);
+  }
+  
+  .card-rounded {
+    @apply rounded-[28px] overflow-hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  
+  .nav-link {
+    @apply relative text-sm font-medium transition-colors duration-200;
+    color: var(--text-primary);
+  }
+  
+  .nav-link:hover {
+    color: var(--indigo);
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+    background-color: var(--indigo);
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .image-panel {
+    @apply rounded-[28px] lg:rounded-[34px] overflow-hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+  }
+  
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300;
+    background-color: #25D366;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  }
+  
+  .feature-card {
+    @apply p-6 lg:p-8 rounded-[24px] bg-white transition-all duration-300;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .room-card {
+    @apply rounded-[28px] overflow-hidden bg-white transition-all duration-300;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+  
+  .room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  }
+  
+  .gallery-item {
+    @apply rounded-[20px] overflow-hidden transition-all duration-300;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border transition-all duration-200;
+    border-color: rgba(17, 17, 17, 0.1);
+    background-color: white;
+  }
+  
+  .form-input:focus {
+    @apply outline-none ring-2;
+    border-color: var(--indigo);
+    ring-color: rgba(61, 90, 254, 0.2);
+  }
+  
+  .dark-section {
+    background-color: var(--navy);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
