@@ -19,13 +19,13 @@ const Home = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const heroTl = gsap.timeline();
-      
+
       heroTl.fromTo(
         heroImageRef.current,
         { x: 100, opacity: 0, scale: 0.95 },
         { x: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
       );
-      
+
       heroTl.fromTo(
         heroTextRef.current?.querySelectorAll('.hero-animate') || [],
         { y: 40, opacity: 0 },
@@ -198,10 +198,10 @@ const Home = () => {
                 STAYS
               </h1>
               <p className="hero-animate text-lg text-text-secondary max-w-md mb-8 leading-relaxed">
-                Looking for a peaceful and comfortable stay? You're in the right place. 
+                Looking for a peaceful and comfortable stay? You're in the right place.
                 We make your stay simple and comfortable.
               </p>
-              
+
               <div className="hero-animate flex flex-wrap items-center gap-6 mb-8">
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1">
@@ -325,7 +325,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            
+
             <div className="comfort-text">
               <span className="font-mono text-xs uppercase tracking-[0.12em] text-text-secondary mb-4 block">
                 Rooms & Suites
@@ -336,7 +336,7 @@ const Home = () => {
                 COMFORT
               </h2>
               <p className="text-text-secondary mb-8 leading-relaxed max-w-md">
-                Every room is designed to give you the comfort you deserve. 
+                Every room is designed to give you the comfort you deserve.
                 From premium bedding to thoughtful amenities, we ensure your stay is nothing short of perfect.
               </p>
               <Link to="/rooms" className="btn-primary inline-flex">
@@ -358,10 +358,10 @@ const Home = () => {
                 THAT MATTER
               </h2>
               <p className="text-text-secondary mb-8 leading-relaxed max-w-md">
-                We've thought of everything so you don't have to. Enjoy modern conveniences 
+                We've thought of everything so you don't have to. Enjoy modern conveniences
                 that make your stay seamless and enjoyable.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {amenities.map((amenity, index) => (
                   <div key={index} className="amenity-item flex items-center gap-3">
@@ -373,7 +373,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="order-1 lg:order-2 grid grid-cols-2 gap-4 lg:gap-6">
               <div className="comfort-panel image-panel aspect-[3/4] mt-8">
                 <img
@@ -413,7 +413,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            
+
             <div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-6 leading-tight">
                 PRIME LOCATION
@@ -421,7 +421,7 @@ const Home = () => {
                 EASY ACCESS
               </h2>
               <p className="text-text-secondary mb-8 leading-relaxed max-w-md">
-                Close to transit, dining, and the places you need to be. 
+                Close to transit, dining, and the places you need to be.
                 Our central location puts you right where the action is.
               </p>
               <div className="flex items-center gap-3">
